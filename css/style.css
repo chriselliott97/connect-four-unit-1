@@ -12,5 +12,14 @@
 .board > div {
   height: 20px;
   width: 20px;
-  background-color: lightblue;
+}
+
+.player-one {
+  background-color: red;
+  border-radius: 10px;
+}
+
+.player-two {
+  background-color: black;
+  border-radius: 10px;
 }
