@@ -1,5 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
-let winningArray = [ 
+let winningCombos = [ 
   [0, 1, 2, 3], [41, 40, 39, 38],[7, 8, 9, 10], 
   [34, 33, 32, 31], [14, 15, 16, 17], [27, 26, 25, 24], 
   [21, 22, 23, 24], [20, 19, 18, 17], [28, 29, 30, 31], 
@@ -51,28 +51,40 @@ init()
 function init() {
   turn = 1
   winner = null
-  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, -1, 1, null, null, null]
+  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
   render()
 }
 
 function render() {
   board.forEach((sqr, idx) => {
-    
     if (squareEls[idx].classList.contains('used')) {
       if (sqr === 1) {
         squareEls[idx - 7].classList.add('used')
         squareEls[idx - 7].classList.add('player-one')
-      }   if (sqr === -1) {
+      } else if (sqr === -1) {
         squareEls[idx - 7].classList.add('used')
         squareEls[idx - 7].classList.add('player-two')
+      } else {
+
       }
     }  
   })
 }
 
-function handleClick() {
+function handleClick(evt) {
+  if(squareEls[(evt.target.id.("col",''))] !== null){
+    return
+  }else if(winner !== null){
+    return
+  } else {
+    squareEls[(evt.target.id.replace("col",''))] = turn 
+  }
+  turn *= -1
 
+  render()
 }
+
 
 function getWinner() {
 
