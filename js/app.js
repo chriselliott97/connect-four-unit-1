@@ -33,7 +33,7 @@ let board, turn, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
-const squareEls = document.querySelectorAll("section > div")
+const squareEls = document.querySelectorAll(".board > div")
 const messageEl = document.querySelector("#message")
 const resetBtnEl = document.querySelector("button")
 const displayPlayerTurn = document.querySelector("#player-turn")
