@@ -1,14 +1,4 @@
-/*-------------------------------- Constants --------------------------------*/
-const column0 = [allCells[35], allCells[28], allCells[21], allCells[14], allCells[7], allCells[0], topCells[0]];
-const column1 = [allCells[36], allCells[29], allCells[22], allCells[15], allCells[8], allCells[1], topCells[1]];
-const column2 = [allCells[37], allCells[30], allCells[23], allCells[16], allCells[9], allCells[2], topCells[2]];
-const column3 = [allCells[38], allCells[31], allCells[24], allCells[17], allCells[10], allCells[3], topCells[3]];
-const column4 = [allCells[39], allCells[32], allCells[25], allCells[18], allCells[11], allCells[4], topCells[4]];
-const column5 = [allCells[40], allCells[33], allCells[26], allCells[19], allCells[12], allCells[5], topCells[5]];
-const column6 = [allCells[41], allCells[34], allCells[27], allCells[20], allCells[13], allCells[6], topCells[6]];
-const columns = [column0, column1, column2, column3, column4, column5, column6];
-
-
+//--------------------------Consts--------------------------------//
 const winningCombos = [ 
   [0, 1, 2, 3], [41, 40, 39, 38],[7, 8, 9, 10], 
   [34, 33, 32, 31], [14, 15, 16, 17], [27, 26, 25, 24], 
@@ -44,15 +34,35 @@ let board, turn, winner
 
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = document.querySelectorAll(".cell:not(.row-top")
-const topRow = document.querySelectorAll(".cell.row-top")
+const topCells = document.querySelectorAll(".cell.row-top")
 const messageEl = document.querySelector("#message")
 const resetBtnEl = document.querySelector("button")
-const displayPlayerTurn = document.querySelector("#player-turn")
+
+//columns
+const column0 = [squareEls[35], squareEls[28], squareEls[21], squareEls[14], squareEls[7], squareEls[0], topCells[0]];
+const column1 = [squareEls[36], squareEls[29], squareEls[22], squareEls[15], squareEls[8], squareEls[1], topCells[1]];
+const column2 = [squareEls[37], squareEls[30], squareEls[23], squareEls[16], squareEls[9], squareEls[2], topCells[2]];
+const column3 = [squareEls[38], squareEls[31], squareEls[24], squareEls[17], squareEls[10], squareEls[3], topCells[3]];
+const column4 = [squareEls[39], squareEls[32], squareEls[25], squareEls[18], squareEls[11], squareEls[4], topCells[4]];
+const column5 = [squareEls[40], squareEls[33], squareEls[26], squareEls[19], squareEls[12], squareEls[5], topCells[5]];
+const column6 = [squareEls[41], squareEls[34], squareEls[27], squareEls[20], squareEls[13], squareEls[6], topCells[6]];
+const columns = [column0, column1, column2, column3, column4, column5, column6];
+
+//rows
+const topRow = [topCells[0], topCells[1], topCells[2], topCells[3], topCells[4], topCells[5], topCells[6]];
+const row0 = [squareEls[0], squareEls[1], squareEls[2], squareEls[3], squareEls[4], squareEls[5], squareEls[6]];
+const row1 = [squareEls[7], squareEls[8], squareEls[9], squareEls[10], squareEls[11], squareEls[12], squareEls[13]];
+const row2 = [squareEls[14], squareEls[15], squareEls[16], squareEls[17], squareEls[18], squareEls[19], squareEls[20]];
+const row3 = [squareEls[21], squareEls[22], squareEls[23], squareEls[24], squareEls[25], squareEls[26], squareEls[27]];
+const row4 = [squareEls[28], squareEls[29], squareEls[30], squareEls[31], squareEls[32], squareEls[33], squareEls[34]];
+const row5 = [squareEls[35], squareEls[36], squareEls[37], squareEls[38], squareEls[39], squareEls[40], squareEls[41]];
+const rows = [row0, row1, row2, row3, row4, row5, topRow];
+
 
 /*----------------------------- Event Listeners -----------------------------*/
 squareEls.forEach(function(square){square.addEventListener("click", handleClick)})
 
-for ()
+
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -91,13 +101,11 @@ function render() {
 }
 
 function handleClick(evt) {
-  if(board[(evt.target.class.replace("cell", ''))] !== null){
-		return
-  }
+  board[(evt.target.classList.add('red'))] = turn
   turn *= -1
+  }
 
-  render()
-}
+
 
 
 function getWinner() {
