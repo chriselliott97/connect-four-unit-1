@@ -1,5 +1,15 @@
 /*-------------------------------- Constants --------------------------------*/
-let winningCombos = [ 
+const column0 = [allCells[35], allCells[28], allCells[21], allCells[14], allCells[7], allCells[0], topCells[0]];
+const column1 = [allCells[36], allCells[29], allCells[22], allCells[15], allCells[8], allCells[1], topCells[1]];
+const column2 = [allCells[37], allCells[30], allCells[23], allCells[16], allCells[9], allCells[2], topCells[2]];
+const column3 = [allCells[38], allCells[31], allCells[24], allCells[17], allCells[10], allCells[3], topCells[3]];
+const column4 = [allCells[39], allCells[32], allCells[25], allCells[18], allCells[11], allCells[4], topCells[4]];
+const column5 = [allCells[40], allCells[33], allCells[26], allCells[19], allCells[12], allCells[5], topCells[5]];
+const column6 = [allCells[41], allCells[34], allCells[27], allCells[20], allCells[13], allCells[6], topCells[6]];
+const columns = [column0, column1, column2, column3, column4, column5, column6];
+
+
+const winningCombos = [ 
   [0, 1, 2, 3], [41, 40, 39, 38],[7, 8, 9, 10], 
   [34, 33, 32, 31], [14, 15, 16, 17], [27, 26, 25, 24], 
   [21, 22, 23, 24], [20, 19, 18, 17], [28, 29, 30, 31], 
@@ -33,7 +43,8 @@ let board, turn, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
-const squareEls = document.querySelectorAll(".board > div")
+const squareEls = document.querySelectorAll(".cell:not(.row-top")
+const topRow = document.querySelectorAll(".cell.row-top")
 const messageEl = document.querySelector("#message")
 const resetBtnEl = document.querySelector("button")
 const displayPlayerTurn = document.querySelector("#player-turn")
@@ -41,7 +52,7 @@ const displayPlayerTurn = document.querySelector("#player-turn")
 /*----------------------------- Event Listeners -----------------------------*/
 squareEls.forEach(function(square){square.addEventListener("click", handleClick)})
 
-resetBtnEl.addEventListener('click', resetGame)
+for ()
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -51,34 +62,37 @@ init()
 function init() {
   turn = 1
   winner = null
-  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
-
+  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
   render()
 }
 
 function render() {
   board.forEach((sqr, idx) => {
-    if (squareEls[idx].classList.contains('used')) {
       if (sqr === 1) {
-        squareEls[idx - 7].classList.add('used')
-        squareEls[idx - 7].classList.add('player-one')
+        squareEls[idx].classList.add('red')
+        squareEls[idx].classList.add('player-one')
       } else if (sqr === -1) {
-        squareEls[idx - 7].classList.add('used')
-        squareEls[idx - 7].classList.add('player-two')
+        squareEls[idx].classList.add('black')
+        squareEls[idx].classList.add('player-two')
       } else {
-
-      }
-    }  
+        squareEls[idx] = ''
+        squareEls[idx] = ''
+      } 
   })
+  if (winner === null) {
+    messageEl.textContent = `It is ${turn === 1 ? "Red's turn!" : "Black's turn!"}`
+  } else if (winner === 'T') {
+    messageEl.textContent = "It's a tie! Play again!" 
+    resetBtnEl.removeAttribute('hidden')
+  } else {
+    messageEl.textContent = `Congrats! ${winner === -1 ? 'Red' : 'Black'} won!`
+    resetBtnEl.removeAttribute('hidden')
+  }
 }
 
 function handleClick(evt) {
-  if(squareEls[(evt.target.id.("col",''))] !== null){
-    return
-  }else if(winner !== null){
-    return
-  } else {
-    squareEls[(evt.target.id.replace("col",''))] = turn 
+  if(board[(evt.target.class.replace("cell", ''))] !== null){
+		return
   }
   turn *= -1
 
