@@ -27,41 +27,45 @@ const winningCombos = [
 
 
 
+
 /*---------------------------- Variables (state) ----------------------------*/
 let board, turn, winner
-
-
+let playerRed = 'red'
+let playerBlack = 'black'
+let rows = 7
+let columns = 7
 
 /*------------------------ Cached Element References ------------------------*/
-const squareEls = document.querySelectorAll(".cell:not(.row-top")
+const squareEls = document.querySelectorAll(".cell:not(.row-top)")
 const topCells = document.querySelectorAll(".cell.row-top")
 const messageEl = document.querySelector("#message")
 const resetBtnEl = document.querySelector("button")
 
-//columns
-const column0 = [squareEls[35], squareEls[28], squareEls[21], squareEls[14], squareEls[7], squareEls[0], topCells[0]];
-const column1 = [squareEls[36], squareEls[29], squareEls[22], squareEls[15], squareEls[8], squareEls[1], topCells[1]];
-const column2 = [squareEls[37], squareEls[30], squareEls[23], squareEls[16], squareEls[9], squareEls[2], topCells[2]];
-const column3 = [squareEls[38], squareEls[31], squareEls[24], squareEls[17], squareEls[10], squareEls[3], topCells[3]];
-const column4 = [squareEls[39], squareEls[32], squareEls[25], squareEls[18], squareEls[11], squareEls[4], topCells[4]];
-const column5 = [squareEls[40], squareEls[33], squareEls[26], squareEls[19], squareEls[12], squareEls[5], topCells[5]];
-const column6 = [squareEls[41], squareEls[34], squareEls[27], squareEls[20], squareEls[13], squareEls[6], topCells[6]];
-const columns = [column0, column1, column2, column3, column4, column5, column6];
-
-//rows
-const topRow = [topCells[0], topCells[1], topCells[2], topCells[3], topCells[4], topCells[5], topCells[6]];
-const row0 = [squareEls[0], squareEls[1], squareEls[2], squareEls[3], squareEls[4], squareEls[5], squareEls[6]];
-const row1 = [squareEls[7], squareEls[8], squareEls[9], squareEls[10], squareEls[11], squareEls[12], squareEls[13]];
-const row2 = [squareEls[14], squareEls[15], squareEls[16], squareEls[17], squareEls[18], squareEls[19], squareEls[20]];
-const row3 = [squareEls[21], squareEls[22], squareEls[23], squareEls[24], squareEls[25], squareEls[26], squareEls[27]];
-const row4 = [squareEls[28], squareEls[29], squareEls[30], squareEls[31], squareEls[32], squareEls[33], squareEls[34]];
-const row5 = [squareEls[35], squareEls[36], squareEls[37], squareEls[38], squareEls[39], squareEls[40], squareEls[41]];
-const rows = [row0, row1, row2, row3, row4, row5, topRow];
+  //columns
+  const column0 = [squareEls[35], squareEls[28], squareEls[21], squareEls[14], squareEls[7], squareEls[0], topCells[0]];
+  const column1 = [squareEls[36], squareEls[29], squareEls[22], squareEls[15], squareEls[8], squareEls[1], topCells[1]];
+  const column2 = [squareEls[37], squareEls[30], squareEls[23], squareEls[16], squareEls[9], squareEls[2], topCells[2]];
+  const column3 = [squareEls[38], squareEls[31], squareEls[24], squareEls[17], squareEls[10], squareEls[3], topCells[3]];
+  const column4 = [squareEls[39], squareEls[32], squareEls[25], squareEls[18], squareEls[11], squareEls[4], topCells[4]];
+  const column5 = [squareEls[40], squareEls[33], squareEls[26], squareEls[19], squareEls[12], squareEls[5], topCells[5]];
+  const column6 = [squareEls[41], squareEls[34], squareEls[27], squareEls[20], squareEls[13], squareEls[6], topCells[6]];
+  const columnsArr = [column0, column1, column2, column3, column4, column5, column6];
+  
+  //rows
+  const topRow = [topCells[0], topCells[1], topCells[2], topCells[3], topCells[4], topCells[5], topCells[6]];
+  const row0 = [squareEls[0], squareEls[1], squareEls[2], squareEls[3], squareEls[4], squareEls[5], squareEls[6]];
+  const row1 = [squareEls[7], squareEls[8], squareEls[9], squareEls[10], squareEls[11], squareEls[12], squareEls[13]];
+  const row2 = [squareEls[14], squareEls[15], squareEls[16], squareEls[17], squareEls[18], squareEls[19], squareEls[20]];
+  const row3 = [squareEls[21], squareEls[22], squareEls[23], squareEls[24], squareEls[25], squareEls[26], squareEls[27]];
+  const row4 = [squareEls[28], squareEls[29], squareEls[30], squareEls[31], squareEls[32], squareEls[33], squareEls[34]];
+  const row5 = [squareEls[35], squareEls[36], squareEls[37], squareEls[38], squareEls[39], squareEls[40], squareEls[41]];
+  const rowsArr = [row0, row1, row2, row3, row4, row5, topRow];
+  
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 squareEls.forEach(function(square){square.addEventListener("click", handleClick)})
-
+// topCells.forEach(function(cell){cell.addEventListener('mousehover', handleHover)})
 
 
 
@@ -71,8 +75,11 @@ init()
 
 function init() {
   turn = 1
+
+  board = [null, 1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1, null, null, null, null, null, null]
+  
   winner = null
-  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
   render()
 }
 
@@ -80,12 +87,9 @@ function render() {
   board.forEach((sqr, idx) => {
       if (sqr === 1) {
         squareEls[idx].classList.add('red')
-        squareEls[idx].classList.add('player-one')
       } else if (sqr === -1) {
         squareEls[idx].classList.add('black')
-        squareEls[idx].classList.add('player-two')
       } else {
-        squareEls[idx] = ''
         squareEls[idx] = ''
       } 
   })
@@ -99,13 +103,33 @@ function render() {
     resetBtnEl.removeAttribute('hidden')
   }
 }
+console.log(board[1])
 
 function handleClick(evt) {
-  board[(evt.target.classList.add('red'))] = turn
+let spIdx = parseInt(evt.target.id.replace('sp', ''))
+
+  // get the piece to go to the bottom of the column
+  // get the pice if placed below have new piece go on the next row of column 
+  // write a new function that will correspond to a piece being put above in the columns 
+  // board[spIdx] = turn
+  const corrIdx = handlePlacement(spIdx)
+  console.log(corrIdx)
+  board[corrIdx] = turn
   turn *= -1
-  }
+  render()
+}
 
-
+function handlePlacement(spIdx) {
+  // determine the placement of token
+  // accepts spIdx as input
+  // output is finding the next available index
+  console.log(spIdx)
+  let opnPos = spIdx + 35 
+  // check positios in board (loop)
+  // check multiples of 7
+  // for loop
+  return opnPos
+}
 
 
 function getWinner() {
