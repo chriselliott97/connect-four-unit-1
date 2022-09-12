@@ -1,6 +1,6 @@
 body {
   align-items: center;
-  background: white;
+  background: lightgrey;
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
@@ -38,7 +38,7 @@ body {
 }
 
 .cell.row-top {
-  background: white;
+  background: lightgrey;
 }
 
 .cell.row-top::after {

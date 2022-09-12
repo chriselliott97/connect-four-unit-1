@@ -68,18 +68,17 @@ squareEls.forEach(function(square){square.addEventListener("click", handleClick)
 // topCells.forEach(function(cell){cell.addEventListener('mousehover', handleHover)})
 
 
-
+resetBtnEl.addEventListener('click', resetGame)
 /*-------------------------------- Functions --------------------------------*/
 
 init()
 
 function init() {
-  turn = 1
-
-  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
   
+  
+  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+  turn = 1
   winner = null
-
   render()
 }
 
@@ -107,8 +106,12 @@ function render() {
 
 
 function handleClick(evt) {
-let spIdx = parseInt(evt.target.id.replace('sp', ''))
-
+  let spIdx = parseInt(evt.target.id.replace('sp', ''))
+  // if (board[spIdx] !== null){
+  //   return
+  // } else if (winner !== null) {
+  //   return
+  // } else {
   // get the piece to go to the bottom of the column
   // get the pice if placed below have new piece go on the next row of column 
   // write a new function that will correspond to a piece being put above in the columns 
@@ -116,6 +119,7 @@ let spIdx = parseInt(evt.target.id.replace('sp', ''))
   const corrIdx = handlePlacement(spIdx)
   console.log('the correct space', corrIdx)
   board[corrIdx] = turn
+  
   turn *= -1
   render()
 }
@@ -124,15 +128,14 @@ function handlePlacement(spIdx) {
   // determine the placement of token
   // accepts spIdx as input
   // output is finding the next available index
-  console.log('space i click on', spIdx)
-  let opnPos = spIdx + 35 
+  // console.log('space i click on', spIdx)
+  let opnPos = spIdx + 35
   // check positios in board (loop)
   // check multiples of 7
   // for loop
-  // for (let i = 0; i <board.length; i + 7){
-  //   let opnPos = spIdx[i] 
-  // }
-  return opnPos
+  for (let i = board.length; i > 0; i -= 7){
+    console.log(opnPos - [i]) 
+  } return opnPos
 }
 
 
@@ -147,5 +150,6 @@ function getWinner() {
 }
 
 function resetGame() {
-
+  init()
+  resetBtnEl.hidden = true
 }
