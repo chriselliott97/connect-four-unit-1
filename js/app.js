@@ -76,7 +76,7 @@ init()
 function init() {
   turn = 1
 
-  board = [null, 1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1, null, null, null, null, null, null]
+  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
   
   winner = null
 
@@ -84,6 +84,7 @@ function init() {
 }
 
 function render() {
+  getWinner()
   board.forEach((sqr, idx) => {
       if (sqr === 1) {
         squareEls[idx].classList.add('red')
@@ -103,7 +104,7 @@ function render() {
     resetBtnEl.removeAttribute('hidden')
   }
 }
-console.log(board[1])
+
 
 function handleClick(evt) {
 let spIdx = parseInt(evt.target.id.replace('sp', ''))
@@ -113,7 +114,7 @@ let spIdx = parseInt(evt.target.id.replace('sp', ''))
   // write a new function that will correspond to a piece being put above in the columns 
   // board[spIdx] = turn
   const corrIdx = handlePlacement(spIdx)
-  console.log(corrIdx)
+  console.log('the correct space', corrIdx)
   board[corrIdx] = turn
   turn *= -1
   render()
@@ -123,17 +124,26 @@ function handlePlacement(spIdx) {
   // determine the placement of token
   // accepts spIdx as input
   // output is finding the next available index
-  console.log(spIdx)
+  console.log('space i click on', spIdx)
   let opnPos = spIdx + 35 
   // check positios in board (loop)
   // check multiples of 7
   // for loop
+  // for (let i = 0; i <board.length; i + 7){
+  //   let opnPos = spIdx[i] 
+  // }
   return opnPos
 }
 
 
 function getWinner() {
-
+  winningCombos.forEach(function(combo){
+    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]) === 4){
+			winner = turn
+		}else if(!board.includes(null)){
+			winner = 'T'
+		}
+  })
 }
 
 function resetGame() {
