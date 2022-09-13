@@ -54,9 +54,9 @@ main {
   align-items: center;
   background: #4370F1;
   display: flex;
-  height: 66.6px;
+  height: 65.6px;
   justify-content: center;
-  width: 71.5px;
+  width: 70.5px;
 }
 
 .cell::after {
@@ -81,4 +81,7 @@ main {
   background-color: blue;
 }
 
+#reset {
+  margin: 5px 0;
+}
 /* media query */

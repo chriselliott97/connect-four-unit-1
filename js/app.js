@@ -38,6 +38,8 @@ const squareEls = document.querySelectorAll(".cell")
 const messageEl = document.querySelector("#message")
 const resetBtnEl = document.querySelector("button")
 const body = document.querySelector('body')
+const hardBtn = document.querySelector('#hard-mode')
+
 
   //columns
   const column0 = [squareEls[35], squareEls[28], squareEls[21], squareEls[14], squareEls[7], squareEls[0]];
@@ -76,6 +78,7 @@ function init() {
   board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = null
+  hardBtn.removeAttribute('hidden')
   render()
 }
 
@@ -130,6 +133,7 @@ function handleClick(evt) {
   board[corrIdx] = turn
   turn *= -1
   render()
+  hardBtn.hidden = true 
 }
 
 function handlePlacement(spIdx){
