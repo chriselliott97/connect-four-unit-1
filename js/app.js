@@ -32,11 +32,9 @@ const winningCombos = [
 let board, turn, winner
 let playerRed = 'red'
 let playerBlack = 'black'
-let rows = 7
-let columns = 7
 
 /*------------------------ Cached Element References ------------------------*/
-const squareEls = document.querySelectorAll(".cell:not(.row-top)")
+const squareEls = document.querySelectorAll(".cell")
 const topCells = document.querySelectorAll(".cell.row-top")
 const messageEl = document.querySelector("#message")
 const resetBtnEl = document.querySelector("button")
@@ -61,11 +59,12 @@ const resetBtnEl = document.querySelector("button")
   const row5 = [squareEls[35], squareEls[36], squareEls[37], squareEls[38], squareEls[39], squareEls[40], squareEls[41]];
   const rowsArr = [row0, row1, row2, row3, row4, row5, topRow];
   
-
+  console.log(topRow)
 
 /*----------------------------- Event Listeners -----------------------------*/
 squareEls.forEach(function(square){square.addEventListener("click", handleClick)})
-// topCells.forEach(function(cell){cell.addEventListener('mousehover', handleHover)})
+
+squareEls.forEach(function(square){})
 
 
 resetBtnEl.addEventListener('click', resetGame)
@@ -74,8 +73,6 @@ resetBtnEl.addEventListener('click', resetGame)
 init()
 
 function init() {
-  
-  
   board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = null
@@ -90,7 +87,7 @@ function render() {
       } else if (sqr === -1) {
         squareEls[idx].classList.add('black')
       } else {
-        squareEls[idx] = ''
+        squareEls[idx].className = ('cell')
       } 
   })
   if (winner === null) {
@@ -104,6 +101,12 @@ function render() {
     confetti.start(3000)
   }
 }
+
+// function HandleHover(evt) {
+//   let
+// }
+
+
 
 function handleClick(evt) {
   let spIdx = parseInt(evt.target.id.replace('sp', ''))
