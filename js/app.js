@@ -25,6 +25,25 @@ const winningCombos = [
   [11, 18, 25, 32], [12, 19, 26, 33], [13, 20, 27, 34] 
   ]
 
+  // //columns
+  // const column0 = [squareEls[35], squareEls[28], squareEls[21], squareEls[14], squareEls[7], squareEls[0]];
+  // const column1 = [squareEls[36], squareEls[29], squareEls[22], squareEls[15], squareEls[8], squareEls[1]];
+  // const column2 = [squareEls[37], squareEls[30], squareEls[23], squareEls[16], squareEls[9], squareEls[2]];
+  // const column3 = [squareEls[38], squareEls[31], squareEls[24], squareEls[17], squareEls[10], squareEls[3]];
+  // const column4 = [squareEls[39], squareEls[32], squareEls[25], squareEls[18], squareEls[11], squareEls[4]];
+  // const column5 = [squareEls[40], squareEls[33], squareEls[26], squareEls[19], squareEls[12], squareEls[5],];
+  // const column6 = [squareEls[41], squareEls[34], squareEls[27], squareEls[20], squareEls[13], squareEls[6]];
+  // const columnsArr = [column0, column1, column2, column3, column4, column5, column6];
+  
+  // //rows
+  // const row0 = [squareEls[0], squareEls[1], squareEls[2], squareEls[3], squareEls[4], squareEls[5], squareEls[6]];
+  // const row1 = [squareEls[7], squareEls[8], squareEls[9], squareEls[10], squareEls[11], squareEls[12], squareEls[13]];
+  // const row2 = [squareEls[14], squareEls[15], squareEls[16], squareEls[17], squareEls[18], squareEls[19], squareEls[20]];
+  // const row3 = [squareEls[21], squareEls[22], squareEls[23], squareEls[24], squareEls[25], squareEls[26], squareEls[27]];
+  // const row4 = [squareEls[28], squareEls[29], squareEls[30], squareEls[31], squareEls[32], squareEls[33], squareEls[34]];
+  // const row5 = [squareEls[35], squareEls[36], squareEls[37], squareEls[38], squareEls[39], squareEls[40], squareEls[41]];
+  // const rowsArr = [row0, row1, row2, row3, row4, row5];
+
 
 
 
@@ -39,33 +58,12 @@ const messageEl = document.querySelector("#message")
 const resetBtnEl = document.querySelector("button")
 const body = document.querySelector('body')
 const hardBtn = document.querySelector('#hard-mode')
-
-
-  //columns
-  const column0 = [squareEls[35], squareEls[28], squareEls[21], squareEls[14], squareEls[7], squareEls[0]];
-  const column1 = [squareEls[36], squareEls[29], squareEls[22], squareEls[15], squareEls[8], squareEls[1]];
-  const column2 = [squareEls[37], squareEls[30], squareEls[23], squareEls[16], squareEls[9], squareEls[2]];
-  const column3 = [squareEls[38], squareEls[31], squareEls[24], squareEls[17], squareEls[10], squareEls[3]];
-  const column4 = [squareEls[39], squareEls[32], squareEls[25], squareEls[18], squareEls[11], squareEls[4]];
-  const column5 = [squareEls[40], squareEls[33], squareEls[26], squareEls[19], squareEls[12], squareEls[5],];
-  const column6 = [squareEls[41], squareEls[34], squareEls[27], squareEls[20], squareEls[13], squareEls[6]];
-  const columnsArr = [column0, column1, column2, column3, column4, column5, column6];
-  
-  //rows
-  const row0 = [squareEls[0], squareEls[1], squareEls[2], squareEls[3], squareEls[4], squareEls[5], squareEls[6]];
-  const row1 = [squareEls[7], squareEls[8], squareEls[9], squareEls[10], squareEls[11], squareEls[12], squareEls[13]];
-  const row2 = [squareEls[14], squareEls[15], squareEls[16], squareEls[17], squareEls[18], squareEls[19], squareEls[20]];
-  const row3 = [squareEls[21], squareEls[22], squareEls[23], squareEls[24], squareEls[25], squareEls[26], squareEls[27]];
-  const row4 = [squareEls[28], squareEls[29], squareEls[30], squareEls[31], squareEls[32], squareEls[33], squareEls[34]];
-  const row5 = [squareEls[35], squareEls[36], squareEls[37], squareEls[38], squareEls[39], squareEls[40], squareEls[41]];
-  const rowsArr = [row0, row1, row2, row3, row4, row5];
-  
-
+const allIDoIsWin = new Audio("../assets/dj-khaled---all-i-do-is-win-By-Tuna.mp3")
 
 /*----------------------------- Event Listeners -----------------------------*/
 squareEls.forEach(function(square){square.addEventListener("click", handleClick)})
 resetBtnEl.addEventListener('click', resetGame)
-
+// hardBtn.addEventListener('click', hardMode)
 
 
 
@@ -78,7 +76,6 @@ function init() {
   board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = null
-  hardBtn.removeAttribute('hidden')
   render()
 }
 
@@ -93,6 +90,7 @@ function render() {
         squareEls[idx].className = ('cell')
         body.style.backgroundColor = ('lightgrey')
         messageEl.style.color = ('')
+        
       } 
   })
   if (winner === null) {
@@ -105,12 +103,16 @@ function render() {
     resetBtnEl.removeAttribute('hidden')
     body.style.backgroundColor = ('red')
     confetti.start(3000)
+    allIDoIsWin.volume = 0.05
+    allIDoIsWin.play()
   } else if (winner === 1) {
     messageEl.textContent = `Congrats! Black won!`
     messageEl.style.color = ('lightgrey')
     resetBtnEl.removeAttribute('hidden')
     body.style.backgroundColor = ('black')
     confetti.start(3000)
+    allIDoIsWin.volume = 0.05
+    allIDoIsWin.play()
   }
 }
 
@@ -132,8 +134,7 @@ function handleClick(evt) {
   console.log('the correct space', corrIdx)
   board[corrIdx] = turn
   turn *= -1
-  render()
-  hardBtn.hidden = true 
+  render() 
 }
 
 function handlePlacement(spIdx){
