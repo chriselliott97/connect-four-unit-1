@@ -1,6 +1,5 @@
 body {
   align-items: center;
-  background: lightgrey;
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
@@ -8,11 +7,16 @@ body {
   width: 100%;
 }
 
+#contain-facts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .board {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   height: 400px;
   margin: 10px 0 25px;
   width: 500px;
@@ -47,5 +51,5 @@ body {
 }
 
 .cell.grey::after {
-  background-color: grey;
+  background-color: blue;
 }

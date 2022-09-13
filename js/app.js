@@ -69,6 +69,7 @@ resetBtnEl.addEventListener('click', resetGame)
 
 /*-------------------------------- Functions --------------------------------*/
 
+
 init()
 
 function init() {
@@ -87,7 +88,7 @@ function render() {
         squareEls[idx].classList.add('black')
       } else {
         squareEls[idx].className = ('cell')
-        body.style.backgroundColor = ('lightgrey')
+        body.style.backgroundColor = ('grey')
         messageEl.style.color = ('')
       } 
   })
