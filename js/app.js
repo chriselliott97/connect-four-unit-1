@@ -59,6 +59,7 @@ const resetBtnEl = document.querySelector("button")
 const body = document.querySelector('body')
 const hardBtn = document.querySelector('#hard-mode')
 const allIDoIsWin = new Audio("../assets/dj-khaled---all-i-do-is-win-By-Tuna.mp3")
+const golfClap = new Audio("../assets/golf-clap.mp3")
 
 /*----------------------------- Event Listeners -----------------------------*/
 squareEls.forEach(function(square){square.addEventListener("click", handleClick)})
@@ -90,7 +91,8 @@ function render() {
         squareEls[idx].className = ('cell')
         body.style.backgroundColor = ('lightgrey')
         messageEl.style.color = ('')
-        
+        allIDoIsWin.pause()
+        allIDoIsWin.currentTime = 0
       } 
   })
   if (winner === null) {
@@ -98,11 +100,13 @@ function render() {
   } else if (winner === 'T') {
     messageEl.textContent = "It's a tie! Play again!" 
     resetBtnEl.removeAttribute('hidden')
+    golfClap.volume = 0.2
+    golfClap.play()
   } else if (winner === -1) {
     messageEl.textContent = `Congrats! Red won!`
     resetBtnEl.removeAttribute('hidden')
     body.style.backgroundColor = ('red')
-    confetti.start(3000)
+    confetti.start(5000)
     allIDoIsWin.volume = 0.05
     allIDoIsWin.play()
   } else if (winner === 1) {
@@ -110,7 +114,7 @@ function render() {
     messageEl.style.color = ('lightgrey')
     resetBtnEl.removeAttribute('hidden')
     body.style.backgroundColor = ('black')
-    confetti.start(3000)
+    confetti.start(5000)
     allIDoIsWin.volume = 0.05
     allIDoIsWin.play()
   }
