@@ -93,6 +93,7 @@ function render() {
         messageEl.style.color = ('')
         allIDoIsWin.pause()
         allIDoIsWin.currentTime = 0
+        confetti.stop()
       } 
   })
   if (winner === null) {
@@ -106,7 +107,7 @@ function render() {
     messageEl.textContent = `Congrats! Red won!`
     resetBtnEl.removeAttribute('hidden')
     body.style.backgroundColor = ('red')
-    confetti.start(5000)
+    confetti.start(10000)
     allIDoIsWin.volume = 0.05
     allIDoIsWin.play()
   } else if (winner === 1) {
@@ -114,7 +115,7 @@ function render() {
     messageEl.style.color = ('lightgrey')
     resetBtnEl.removeAttribute('hidden')
     body.style.backgroundColor = ('black')
-    confetti.start(5000)
+    confetti.start(10000)
     allIDoIsWin.volume = 0.05
     allIDoIsWin.play()
   }
