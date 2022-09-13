@@ -88,7 +88,7 @@ function render() {
         squareEls[idx].classList.add('black')
       } else {
         squareEls[idx].className = ('cell')
-        body.style.backgroundColor = ('grey')
+        body.style.backgroundColor = ('lightgrey')
         messageEl.style.color = ('')
       } 
   })
