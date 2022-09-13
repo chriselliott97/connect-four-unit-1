@@ -101,6 +101,7 @@ function render() {
   } else {
     messageEl.textContent = `Congrats! ${winner === -1 ? 'Red' : 'Black'} won!`
     resetBtnEl.removeAttribute('hidden')
+    confetti.start(3000)
   }
 }
 
@@ -149,7 +150,7 @@ function getWinner() {
   winningCombos.forEach(function(combo){
     if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]) === 4){
 			winner = turn
-		}else if(!board.includes(null)){
+		}else if(!board.includes(null) && winner === null){
 			winner = 'T'
 		}
   })
