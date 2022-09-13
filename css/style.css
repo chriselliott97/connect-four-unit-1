@@ -16,9 +16,7 @@ body {
   height: 400px;
   margin: 10px 0 25px;
   width: 500px;
-}
-.board{
-  border: 5px solid;
+  border: 3px solid;
 }
 
 .cell {
@@ -33,7 +31,7 @@ body {
 .cell::after {
   background: lightgrey;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 2px solid darkblue;
   content: '';
   cursor: pointer;
   height: 55px;
@@ -46,4 +44,8 @@ body {
 
 .cell.black::after {
   background-color: black;
+}
+
+.cell.grey::after {
+  background-color: grey;
 }
