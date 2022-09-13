@@ -11,6 +11,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10px 0 ;
 }
 
 #title {
@@ -80,8 +81,4 @@ main {
   background-color: blue;
 }
 
-@media only screen and (min-width: 768px) {
-  body { 
-
-  }
-}
+/* media query */
