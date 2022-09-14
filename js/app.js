@@ -59,13 +59,15 @@ const messageEl = document.querySelector("#message")
 const resetBtnEl = document.querySelector("button")
 const body = document.querySelector('body')
 const hardBtn = document.querySelector('#hard-mode')
+const token = document.querySelector('#token-color')
+
 const allIDoIsWin = new Audio("../assets/dj-khaled---all-i-do-is-win-By-Tuna.mp3")
 const golfClap = new Audio("../assets/golf-clap.mp3")
 
 /*----------------------------- Event Listeners -----------------------------*/
 squareEls.forEach(function(square){square.addEventListener("click", handleClick)})
 resetBtnEl.addEventListener('click', resetGame)
-// hardBtn.addEventListener('click', hardMode)
+
 
 
 
@@ -97,9 +99,14 @@ function render() {
         confetti.stop()
       } 
   })
-  if (winner === null) {
-    messageEl.textContent = `It is ${turn === 1 ? "Red's turn!" : "Black's turn!"}`
-  } else if (winner === 'T') {
+  if ((winner === null) && (turn === 1)) {
+    messageEl.textContent = "It is Red's turn!"
+    token.style.backgroundColor ='red'
+  } else if ((winner === null) && (turn === -1)) {
+    messageEl.textContent = "It is Black's turn!"
+    token.style.backgroundColor ='black'
+  } 
+  else if (winner === 'T') {
     messageEl.textContent = "It's a tie! Play again!" 
     resetBtnEl.removeAttribute('hidden')
     golfClap.volume = 0.2
@@ -160,7 +167,7 @@ return opnPos
 
 function getWinner() {
   winningCombos.forEach(function(combo){
-    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]) === 4){ console.log(board[combo[0]])
+    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]) === 4){ 
 			winner = turn
 		}else if(!board.includes(null) && winner === null){
 			winner = 'T'

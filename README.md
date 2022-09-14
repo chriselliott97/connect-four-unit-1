@@ -53,4 +53,5 @@ https://www.youtube.com/watch?v=nNRvKviXbU0
 
 - ~~Add audio for a winner and a tie~~
 - Add a hard mode which will add a timer to each turn
+- ~~Add a media query if board reaches a limit~~ 
 - 
