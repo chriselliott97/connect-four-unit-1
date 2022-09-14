@@ -6,7 +6,11 @@
 ### Click [here](https://chris-elliott-connect-four.netlify.app/) to play the game.
 
 
-Goal of Game:
+
+
+
+
+#### Goal of Game:
 
 1.) Have a 6x7 board that will have cells to place tokens corresponding to a persons turn 
 
@@ -18,14 +22,35 @@ Goal of Game:
 
 5.) when the game is over there will be a button that when clicked will allow the players to start a new game 
 
+## Prototype View
+### Here is my wireframe of game:
+![connect four wireframe](assets/game-wireframe.png)
+
+
+## Technology Implemented: 
+- Javascript
+- CSS
+- HTML
+- GIT
+- confetti.js
+- Bootstrap 
+- Google Fonts
 
 
 
+## Credits
 
+- Win Audio from the one and only, Dj Khaled 
 
+Song - All I Do Is Win 
 
-Win Audio from the one and only Dj Khaled 
-song - All I Do Is Win 
-
-Golf Clap audio: 
+- Golf Clap audio: 
+  
 https://www.youtube.com/watch?v=nNRvKviXbU0
+
+
+## Next Steps:
+
+- ~~Add audio for a winner and a tie~~
+- Add a hard mode which will add a timer to each turn
+- 
