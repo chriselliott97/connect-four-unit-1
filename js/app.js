@@ -1,4 +1,5 @@
 //--------------------------Consts--------------------------------//
+
 const winningCombos = [ 
   [0, 1, 2, 3], [41, 40, 39, 38],[7, 8, 9, 10], 
   [34, 33, 32, 31], [14, 15, 16, 17], [27, 26, 25, 24], 
@@ -108,7 +109,7 @@ function render() {
     resetBtnEl.removeAttribute('hidden')
     body.style.backgroundColor = ('red')
     confetti.start(10000)
-    allIDoIsWin.volume = 0.05
+    allIDoIsWin.volume = 0.3
     allIDoIsWin.play()
   } else if (winner === 1) {
     messageEl.textContent = `Congrats! Black won!`
@@ -116,7 +117,7 @@ function render() {
     resetBtnEl.removeAttribute('hidden')
     body.style.backgroundColor = ('black')
     confetti.start(10000)
-    allIDoIsWin.volume = 0.05
+    allIDoIsWin.volume = 0.3
     allIDoIsWin.play()
   }
 }
@@ -127,25 +128,17 @@ function render() {
 
 function handleClick(evt) {
   let spIdx = parseInt(evt.target.id.replace('sp', ''))
-  console.log('the clicked space is ',spIdx)
   if (board[spIdx] || winner) {
     return
   } 
-  // get the piece to go to the bottom of the column
-  // get the piece if placed below have new piece go on the next row of column 
-  // write a new function that will correspond to a piece being put above in the columns 
-
   const corrIdx = handlePlacement(spIdx)
-  console.log('the correct space', corrIdx)
   board[corrIdx] = turn
   turn *= -1
   render() 
 }
 
 function handlePlacement(spIdx){
-console.log('bottom space', spIdx + 35)
 let opnPos = spIdx + 35 
-// for each column it needs to check if row below is filled 
 if (board[opnPos] !== null) {
   opnPos = (spIdx + 28)
 }
@@ -161,14 +154,13 @@ if (board[opnPos] !== null) {
 if (board[opnPos] !== null) {
   opnPos = (spIdx)
 }
-
 return opnPos
 }
 
 
 function getWinner() {
   winningCombos.forEach(function(combo){
-    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]) === 4){
+    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]) === 4){ console.log(board[combo[0]])
 			winner = turn
 		}else if(!board.includes(null) && winner === null){
 			winner = 'T'
