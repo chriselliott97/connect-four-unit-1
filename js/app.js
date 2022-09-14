@@ -60,6 +60,8 @@ const resetBtnEl = document.querySelector("button")
 const body = document.querySelector('body')
 const hardBtn = document.querySelector('#hard-mode')
 const token = document.querySelector('#token-color')
+const winGif = document.querySelector('#winner')
+console.log(winGif)
 
 const allIDoIsWin = new Audio("../assets/dj-khaled---all-i-do-is-win-By-Tuna.mp3")
 const golfClap = new Audio("../assets/golf-clap.mp3")
@@ -116,16 +118,18 @@ function render() {
     resetBtnEl.removeAttribute('hidden')
     body.style.backgroundColor = ('red')
     confetti.start(10000)
-    allIDoIsWin.volume = 0.3
+    allIDoIsWin.volume = 0.2
     allIDoIsWin.play()
+    winGif.removeAttribute('hidden')
   } else if (winner === 1) {
     messageEl.textContent = `Congrats! Black won!`
     messageEl.style.color = ('lightgrey')
     resetBtnEl.removeAttribute('hidden')
     body.style.backgroundColor = ('black')
     confetti.start(10000)
-    allIDoIsWin.volume = 0.3
+    allIDoIsWin.volume = 0.2
     allIDoIsWin.play()
+    winGif.removeAttribute('hidden')
   }
 }
 
@@ -178,5 +182,6 @@ function getWinner() {
 function resetGame() {
   init()
   resetBtnEl.hidden = true
+  winGif.hidden = true
 }
 

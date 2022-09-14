@@ -80,11 +80,12 @@ main {
   margin: 5px 0;
 }
 
+
 @media only screen and (min-width: 786px){
   main {
     display: grid;
     justify-items: center;
-    grid-template-columns: 70% auto;
+    grid-template-columns: 70% 30%;
     grid-template-rows: auto auto auto;
     grid-template-areas: 
     "title turn"
@@ -114,5 +115,9 @@ main {
     height: 200px;
     width: 200px;
     border-radius: 50%;
+  }
+
+  #winner {
+    grid-area: color;
   }
 } 

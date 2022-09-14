@@ -48,6 +48,10 @@ Song - All I Do Is Win
   
 https://www.youtube.com/watch?v=nNRvKviXbU0
 
+- Schitts Creek Gif 
+  
+"https://giphy.com/gifs/cbc-schitts-creek-4QFAH0qZ0LQnIwVYKT"
+
 
 ## Next Steps:
 
