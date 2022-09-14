@@ -1,8 +1,13 @@
-Connect Four 
+# Connect Four 
 
-First Unit Project for SEIR 8/22
+## First Unit Project for SEIR 8/22
+
+## To Play the game:
+### Click [here](https://chris-elliott-connect-four.netlify.app/) to play the game.
+
 
 Goal of Game:
+
 1.) Have a 6x7 board that will have cells to place tokens corresponding to a persons turn 
 
 2.) One player will be red and the pther will be black 
