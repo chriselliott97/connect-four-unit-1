@@ -30,7 +30,6 @@ const winningCombos = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 let board, turn, winner
-let facts = []
 
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = document.querySelectorAll(".cell")
@@ -75,7 +74,7 @@ function render() {
         squareEls[idx].classList.add('black')
       } else {
         squareEls[idx].className = ('cell')
-        body.style.backgroundColor = ('lightgrey')
+        body.style.backgroundImage = ('linear-gradient(white, black)')
         messageEl.style.color = ('')
         allIDoIsWin.pause()
         allIDoIsWin.currentTime = 0
@@ -87,7 +86,7 @@ function render() {
   })
   if ((winner === null) && (turn === 1)) {
     messageEl.textContent = "It is Red's turn!"
-    token.style.backgroundColor ='red'
+    token.style.backgroundColor = 'red'
     messageEl.style.color = ('darkred')
     funFact.innerHTML = getRandomFact()
     token.hidden = false
@@ -103,7 +102,7 @@ function render() {
   } else if (winner === -1) {
     messageEl.textContent = `Congrats! Red won!`
     resetBtnEl.removeAttribute('hidden')
-    body.style.backgroundColor = ('red')
+    body.style.backgroundImage = ('linear-gradient(red, black)')
     confetti.start(10000)
     allIDoIsWin.volume = 0.1
     allIDoIsWin.play()
@@ -114,9 +113,9 @@ function render() {
     ribbon.removeAttribute('hidden')
   } else if (winner === 1) {
     messageEl.textContent = `Congrats! Black won!`
-    messageEl.style.color = ('lightgrey')
+    messageEl.style.color = ('white')
     resetBtnEl.removeAttribute('hidden')
-    body.style.backgroundColor = ('black')
+    body.style.backgroundImage = ('linear-gradient(black, grey)')
     confetti.start(10000)
     allIDoIsWin.volume = 0.1
     allIDoIsWin.play()
@@ -125,7 +124,7 @@ function render() {
     funFact.hidden = true
     ribbon.removeAttribute('hidden')
     factTitle.innerHTML = ("Red Recieves:")
-    factTitle.style.color = 'lightgrey'
+    factTitle.style.color = 'white'
   }
 }
 

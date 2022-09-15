@@ -1,3 +1,7 @@
+body {
+  height: 100vh;
+}
+
 main {
   align-items: center;
   display: flex;
@@ -52,6 +56,8 @@ main {
   justify-content: center;
   width: 70.6px;
 }
+
+
 
 .cell::after {
   background: lightgrey;
@@ -151,6 +157,7 @@ main {
     grid-area: facts;
     font-size: 20px;
     padding: 0 30px 0 20px ;
+    color: black;
   }
 
   #ribbon{
