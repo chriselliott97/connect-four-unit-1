@@ -26,32 +26,10 @@ const winningCombos = [
   [11, 18, 25, 32], [12, 19, 26, 33], [13, 20, 27, 34] 
   ]
 
-  // //columns
-  // const column0 = [squareEls[35], squareEls[28], squareEls[21], squareEls[14], squareEls[7], squareEls[0]];
-  // const column1 = [squareEls[36], squareEls[29], squareEls[22], squareEls[15], squareEls[8], squareEls[1]];
-  // const column2 = [squareEls[37], squareEls[30], squareEls[23], squareEls[16], squareEls[9], squareEls[2]];
-  // const column3 = [squareEls[38], squareEls[31], squareEls[24], squareEls[17], squareEls[10], squareEls[3]];
-  // const column4 = [squareEls[39], squareEls[32], squareEls[25], squareEls[18], squareEls[11], squareEls[4]];
-  // const column5 = [squareEls[40], squareEls[33], squareEls[26], squareEls[19], squareEls[12], squareEls[5],];
-  // const column6 = [squareEls[41], squareEls[34], squareEls[27], squareEls[20], squareEls[13], squareEls[6]];
-  // const columnsArr = [column0, column1, column2, column3, column4, column5, column6];
-  
-  // //rows
-  // const row0 = [squareEls[0], squareEls[1], squareEls[2], squareEls[3], squareEls[4], squareEls[5], squareEls[6]];
-  // const row1 = [squareEls[7], squareEls[8], squareEls[9], squareEls[10], squareEls[11], squareEls[12], squareEls[13]];
-  // const row2 = [squareEls[14], squareEls[15], squareEls[16], squareEls[17], squareEls[18], squareEls[19], squareEls[20]];
-  // const row3 = [squareEls[21], squareEls[22], squareEls[23], squareEls[24], squareEls[25], squareEls[26], squareEls[27]];
-  // const row4 = [squareEls[28], squareEls[29], squareEls[30], squareEls[31], squareEls[32], squareEls[33], squareEls[34]];
-  // const row5 = [squareEls[35], squareEls[36], squareEls[37], squareEls[38], squareEls[39], squareEls[40], squareEls[41]];
-  // const rowsArr = [row0, row1, row2, row3, row4, row5];
-
-
-
 
 /*---------------------------- Variables (state) ----------------------------*/
 let board, turn, winner
-let playerRed = 'red'
-let playerBlack = 'black'
+const facts = []
 
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = document.querySelectorAll(".cell")

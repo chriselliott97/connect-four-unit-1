@@ -26,6 +26,20 @@
 ### Here is my wireframe of game:
 ![connect four wireframe](assets/game-wireframe.png)
 
+## PsuedoCode
+- Create a board in HTML 
+- Define the required variables used to track the state of the game (board, turn, winner)
+- Store cached element references (each spot on grid, winning message and player turn, reset button)
+- Create an initialized function (board will be empty, no winner, player 1 turn)
+- The game should be initialized with an empty board and grid for where to place the piece
+- Create a render function to show what happens during winner 
+- The game state should change and render depending on what the user is doing 
+- Define the required constants
+- Handle a player clicking a square with an event listener 
+- Build the function to find and define a winner
+- Create Reset functionality
+- Create a form of the game that allows for a hard mode which will have a 10 second timer attached to each move (still in the initial thought process for that one)
+
 
 ## Technology Implemented: 
 - Javascript
@@ -58,4 +72,4 @@ https://www.youtube.com/watch?v=nNRvKviXbU0
 - ~~Add audio for a winner and a tie~~
 - Add a hard mode which will add a timer to each turn
 - ~~Add a media query if board reaches a limit~~ 
-- 
+- Add a data file that will have the fun facts which will randomly be displayed 
