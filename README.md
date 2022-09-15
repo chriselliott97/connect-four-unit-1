@@ -81,6 +81,10 @@ Fun Facts
   
 - https://www.gamesver.com/17-fun-and-intriguing-facts-about-connect-4/
 
+Second Place Ribbon Image
+
+- https://creazilla.com/nodes/70086-2nd-place-medal-clipart
+
 ---
 ## Future Next Steps:
 

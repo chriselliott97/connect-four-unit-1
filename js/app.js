@@ -40,8 +40,8 @@ const body = document.querySelector('body')
 const token = document.querySelector('#token-color')
 const winGif = document.querySelector('#winner')
 const funFact = document.querySelector("#fact")
-
-
+const factTitle = document.querySelector("#fun-facts")
+const ribbon = document.querySelector("#ribbon")
 const allIDoIsWin = new Audio("../assets/dj-khaled---all-i-do-is-win-By-Tuna.mp3")
 const golfClap = new Audio("../assets/golf-clap.mp3")
 
@@ -80,6 +80,9 @@ function render() {
         allIDoIsWin.pause()
         allIDoIsWin.currentTime = 0
         confetti.stop()
+        factTitle.innerHTML = 'Connect Four Fun Facts:'
+        factTitle.style.color = 'black'
+        funFact.removeAttribute('hidden')
       } 
   })
   if ((winner === null) && (turn === 1)) {
@@ -106,6 +109,9 @@ function render() {
     allIDoIsWin.play()
     winGif.removeAttribute('hidden')
     token.hidden = true
+    funFact.hidden = true
+    factTitle.innerHTML = ("Black Recieves:")
+    ribbon.removeAttribute('hidden')
   } else if (winner === 1) {
     messageEl.textContent = `Congrats! Black won!`
     messageEl.style.color = ('lightgrey')
@@ -116,6 +122,10 @@ function render() {
     allIDoIsWin.play()
     winGif.removeAttribute('hidden')
     token.hidden = true
+    funFact.hidden = true
+    ribbon.removeAttribute('hidden')
+    factTitle.innerHTML = ("Red Recieves:")
+    factTitle.style.color = 'lightgrey'
   }
 }
 
@@ -169,5 +179,6 @@ function resetGame() {
   init()
   resetBtnEl.hidden = true
   winGif.hidden = true
+  ribbon.hidden = true
 }
 

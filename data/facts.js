@@ -12,7 +12,9 @@ const funFacts = [
   "There are annual Connect 4 game tournaments held across the globe.",
   "Being color-blind can hinder your ability to play certain versions of Connect Four",
   "Great game to play with your mother on a snowy winter day",
-  "Fathers can be impatient with the game of Connect Four and often times lack the willingness to lose to their kin"
+  "Fathers can be impatient with the game of Connect Four and often times lack the willingness to lose to their kin",
+  "If you dont know how to play Connect Four, luckily for you the instructions are in the title of the game.",
+  
 ]
 
 function getRandomFact() {
