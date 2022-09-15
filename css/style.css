@@ -15,6 +15,7 @@ main {
   padding: 0 50px;
   border-radius: 50%;
   animation: pulse 10s infinite;
+  text-shadow: 3px 2px #040404;
 }
 
 @keyframes pulse {
@@ -119,6 +120,7 @@ main {
     height: 200px;
     width: 200px;
     border-radius: 50%;
+    box-shadow: 5px 5px 3px;
   }
 
   #winner {
