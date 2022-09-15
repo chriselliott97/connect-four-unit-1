@@ -14,7 +14,9 @@ const funFacts = [
   "Great game to play with your mother on a snowy winter day",
   "Fathers can be impatient with the game of Connect Four and often times lack the willingness to lose to their kin",
   "If you dont know how to play Connect Four, luckily for you the instructions are in the title of the game.",
-  
+  "Connect Four is a great way to settle a debate. The winner of the game also wins the debate! No questions asked.",
+  "In 2014, Chris Elliott lost to his mother in the game of Connect Four and it left a bad taste in his mouth.",
+  "It is rumored that sales for Connect Four in 2020 increased due to boredom during quarentine"
 ]
 
 function getRandomFact() {
