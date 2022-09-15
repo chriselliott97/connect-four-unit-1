@@ -101,7 +101,7 @@ function render() {
     resetBtnEl.removeAttribute('hidden')
     body.style.backgroundColor = ('red')
     confetti.start(10000)
-    allIDoIsWin.volume = 0.2
+    allIDoIsWin.volume = 0.02
     allIDoIsWin.play()
     winGif.removeAttribute('hidden')
   } else if (winner === 1) {
@@ -110,7 +110,7 @@ function render() {
     resetBtnEl.removeAttribute('hidden')
     body.style.backgroundColor = ('black')
     confetti.start(10000)
-    allIDoIsWin.volume = 0.2
+    allIDoIsWin.volume = 0.02
     allIDoIsWin.play()
     winGif.removeAttribute('hidden')
   }
