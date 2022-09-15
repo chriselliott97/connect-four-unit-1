@@ -85,6 +85,7 @@ function render() {
   if ((winner === null) && (turn === 1)) {
     messageEl.textContent = "It is Red's turn!"
     token.style.backgroundColor ='red'
+    messageEl.style.color = ('darkred')
     funFact.innerHTML = getRandomFact()
   } else if ((winner === null) && (turn === -1)) {
     messageEl.textContent = "It is Black's turn!"

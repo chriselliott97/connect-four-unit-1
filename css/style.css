@@ -142,7 +142,7 @@ main {
     display: flex;
     grid-area: fact-title;
     margin: 10px 0 0 0;
-    padding: 0px 0px;
+    padding: 0px 80px 0px 0 ;
     text-decoration: underline;
   }
 
@@ -150,6 +150,7 @@ main {
     display: flex;
     grid-area: facts;
     font-size: 20px;
+    padding: 0 30px 0 20px ;
   }
 
   .board {
