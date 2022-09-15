@@ -87,6 +87,7 @@ function render() {
     token.style.backgroundColor ='red'
     messageEl.style.color = ('darkred')
     funFact.innerHTML = getRandomFact()
+    token.hidden = false
   } else if ((winner === null) && (turn === -1)) {
     messageEl.textContent = "It is Black's turn!"
     token.style.backgroundColor ='black'
@@ -104,6 +105,7 @@ function render() {
     allIDoIsWin.volume = 0.1
     allIDoIsWin.play()
     winGif.removeAttribute('hidden')
+    token.hidden = true
   } else if (winner === 1) {
     messageEl.textContent = `Congrats! Black won!`
     messageEl.style.color = ('lightgrey')
@@ -113,6 +115,7 @@ function render() {
     allIDoIsWin.volume = 0.1
     allIDoIsWin.play()
     winGif.removeAttribute('hidden')
+    token.hidden = true
   }
 }
 
