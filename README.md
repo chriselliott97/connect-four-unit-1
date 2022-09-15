@@ -1,9 +1,9 @@
 # Connect Four Unit 1 Project for SEIR 8/22
 
+---
 
-## To Play the game:
 ## Click [here](https://chris-elliott-connect-four.netlify.app/) to play the game.
-
+---
 
 
 
@@ -21,7 +21,9 @@
 
 5.) When the game is over there will be a button that when clicked will allow the players to start a new game 
 
-## PsuedoCode
+---
+## PsuedoCode:
+
 - Create a board in HTML with 42 possible spaces 
 - Define the required variables used to track the state of the game (board, turn, winner)
 - Store cached element references (each spot on grid, winning message and player turn, reset button)
@@ -34,17 +36,22 @@
 - Build the function to find and define a winner
 - Create Reset functionality
 - Create a form of the game that allows for a hard mode which will have a 10 second timer attached to each move (still in the initial thought process for that one)
-## Prototype View
-### Here is my wireframe of game:
+
+---
+## Prototype View:
+### Wireframe of game:
 ![connect four wireframe](assets/game-wireframe.png)
-## Screenshots of Game 
+
+---
+## Screenshots of Game: 
 ### Below 786 pixels in width
 ![connect four first screenshot](assets/Screenshot-1.png)
 ### Between 786 pixels and 1100 pixels in width 
 ![connect four second screenshot](assets/Screenshot-2.png)
+### From 1100 pixels in width and on
+![connect four third screenshot](assets/Screenshot-3.png)
 
-
-
+---
 ## Technology Implemented: 
 - Javascript
 - CSS
@@ -55,7 +62,7 @@
 - Google Fonts
 
 
-
+---
 ## Credits
 
 Win Audio from the one and only, Dj Khaled 
@@ -74,11 +81,11 @@ Fun Facts
   
 - https://www.gamesver.com/17-fun-and-intriguing-facts-about-connect-4/
 
-
+---
 ## Future Next Steps:
 
 - ~~Add audio for a winner and a tie~~
 - Add a hard mode which will add a timer to each turn
 - ~~Add a media query to add features if board reaches a limit~~ 
-- Add a second media query for a second limit to add new featrues 
-- Add a data file that will have the fun facts which will randomly be displayed 
+- ~~Add a second media query for a second limit to add new featrues~~ 
+- ~~Add a data file that will have the fun facts which will randomly be displayed~~ 
