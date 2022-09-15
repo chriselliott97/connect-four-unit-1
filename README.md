@@ -27,15 +27,15 @@
 - Create a board in HTML with 42 possible spaces 
 - Define the required variables used to track the state of the game (board, turn, winner)
 - Store cached element references (each spot on grid, winning message and player turn, reset button)
-- Create an initialized function (board will be empty, no winner, player 1 turn)
+- Add event listners and stub up the required functions that I will need to use for the game
+- Create an initialized function (board will be empty, there will be no winner, and it will be player 1's turn)
 - The game should be initialized with an empty board and grid for where to place the piece
-- Create a render function to show what happens during winner 
+- Create a render function to show what happens to the state of the game for a winner and what happens when a piece is placed on the board 
 - The game state should change and render depending on what the user is doing 
-- Define the required constants
-- Handle a player clicking a square with an event listener 
-- Build the function to find and define a winner
-- Create Reset functionality
-- Create a form of the game that allows for a hard mode which will have a 10 second timer attached to each move (still in the initial thought process for that one)
+- Handle a player clicking a square with an event listener that should place a piece at the bottom no matter how high the player chooses to click  
+- Build the function to find and define a winner (this will require an array of winning combinations)
+- Create Reset functionality for the reset button
+
 
 ---
 ## Prototype View:
@@ -44,12 +44,10 @@
 
 ---
 ## Screenshots of Game: 
-### Below 786 pixels in width
-![connect four first screenshot](assets/Screenshot-1.png)
-### Between 786 pixels and 1100 pixels in width 
-![connect four second screenshot](assets/Screenshot-2.png)
+### Minimum width of 786 pixels
+![connect four first screenshot](assets/Screenshot-1.png) 
 ### From 1100 pixels in width and on
-![connect four third screenshot](assets/Screenshot-3.png)
+![connect four second screenshot](assets/Screenshot-3.png)
 
 ---
 ## Technology Implemented: 
