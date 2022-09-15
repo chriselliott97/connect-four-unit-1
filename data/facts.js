@@ -10,4 +10,16 @@ const funFacts = [
   "The average Connect 4 game takes 1 to 10 minutes to play.",
   "Hasbro has produced Giant Connect 4.",
   "There are annual Connect 4 game tournaments held across the globe.",
+  "Being color-blind can hinder your ability to play certain versions of Connect Four",
+  "Great game to play with your mother on a snowy winter day",
+  "Fathers can be impatient with the game of Connect Four and often times lack the willingness to lose to their kin"
 ]
+
+function getRandomFact() {
+  return funFacts[Math.floor(Math.random() * funFacts.length)]
+}
+
+export {
+  getRandomFact,
+  funFacts,
+}

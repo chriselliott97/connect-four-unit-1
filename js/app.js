@@ -1,3 +1,4 @@
+import { getRandomFact } from "../data/facts.js"
 //--------------------------Consts--------------------------------//
 
 const winningCombos = [ 
@@ -29,17 +30,17 @@ const winningCombos = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 let board, turn, winner
-const facts = []
+let facts = []
 
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = document.querySelectorAll(".cell")
 const messageEl = document.querySelector("#message")
 const resetBtnEl = document.querySelector("button")
 const body = document.querySelector('body')
-const hardBtn = document.querySelector('#hard-mode')
 const token = document.querySelector('#token-color')
 const winGif = document.querySelector('#winner')
-console.log(winGif)
+const funFact = document.querySelector("#fact")
+
 
 const allIDoIsWin = new Audio("../assets/dj-khaled---all-i-do-is-win-By-Tuna.mp3")
 const golfClap = new Audio("../assets/golf-clap.mp3")
@@ -63,6 +64,8 @@ function init() {
   render()
 }
 
+
+
 function render() {
   getWinner()
   board.forEach((sqr, idx) => {
@@ -82,6 +85,7 @@ function render() {
   if ((winner === null) && (turn === 1)) {
     messageEl.textContent = "It is Red's turn!"
     token.style.backgroundColor ='red'
+    funFact.innerHTML = getRandomFact()
   } else if ((winner === null) && (turn === -1)) {
     messageEl.textContent = "It is Black's turn!"
     token.style.backgroundColor ='black'
