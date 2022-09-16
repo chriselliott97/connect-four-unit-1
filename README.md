@@ -43,9 +43,8 @@
 ![connect four wireframe](assets/game-wireframe.png)
 
 ---
-## Screenshots of Game: 
-### Minimum width of 786 pixels
-![connect four first screenshot](assets/Screenshot-1.png) 
+## Screenshot of Game: 
+ 
 ### From 1100 pixels in width and on
 ![connect four second screenshot](assets/Screenshot-3.png)
 
@@ -91,3 +90,4 @@ Second Place Ribbon Image
 - ~~Add a media query to add features if board reaches a limit~~ 
 - ~~Add a second media query for a second limit to add new featrues~~ 
 - ~~Add a data file that will have the fun facts which will randomly be displayed~~ 
+- Build Game for Mobile
